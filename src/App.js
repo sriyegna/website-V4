@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import MUIDrawer from "./Containers/Drawer/MUIDrawer";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import purple from "@material-ui/core/colors/purple";
+import green from "@material-ui/core/colors/green";
 
 function App() {
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
+  const theme = React.useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: prefersDarkMode ? "dark" : "light",
+          primary: {
+            main: purple[500],
+          },
+          secondary: {
+            main: green[500],
+          },
+        },
+      }),
+    [prefersDarkMode]
+  );
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <MUIDrawer></MUIDrawer>
+      </ThemeProvider>
     </div>
   );
 }
