@@ -19,6 +19,9 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
+import Brightness6Icon from "@material-ui/icons/Brightness6";
+import themeObject from "../../themeObject";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -39,9 +42,6 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-  },
-  menuButton: {
-    marginRight: 36,
   },
   hide: {
     display: "none",
@@ -81,22 +81,35 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
 }));
+
+const useLightMode = () => {
+  const [theme, setTheme] = useState(themeObject);
+
+  const toggleLightMode = () => {
+    const updatedTheme = {
+      ...theme,
+      palette: {
+        ...theme.palette,
+        type: theme.palette.type === "light" ? "dark" : "light",
+      },
+    };
+    setTheme(updatedTheme);
+  };
+  return [theme, toggleLightMode];
+};
 
 const MUIDrawer = () => {
   const classes = useStyles();
-  const [theme, setTheme] = useState(useTheme());
-  const [open, setOpen] = React.useState(false);
-
-  const changeLightMode = () => {
-    const tempTheme = createMuiTheme({
-      ...theme,
-      palette: {
-        type: theme.palette.type === "dark" ? "light" : "dark",
-      },
-    });
-    setTheme(tempTheme);
-  };
+  const [open, setOpen] = useState(false);
+  const [theme, toggleLightMode] = useLightMode();
+  const themeConfig = createMuiTheme(theme);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -107,7 +120,7 @@ const MUIDrawer = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeConfig}>
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
@@ -128,9 +141,18 @@ const MUIDrawer = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap>
-              Mini variant drawer
+            <Typography variant="h6" className={classes.title}>
+              Photos
             </Typography>
+            <IconButton
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={toggleLightMode}
+              color="inherit"
+            >
+              <Brightness6Icon />
+            </IconButton>
           </Toolbar>
         </AppBar>
         <Drawer
@@ -180,7 +202,7 @@ const MUIDrawer = () => {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <div onClick={changeLightMode}>Change Mode</div>
+          <div onClick={toggleLightMode}>Change Mode</div>
         </main>
       </div>
     </ThemeProvider>
