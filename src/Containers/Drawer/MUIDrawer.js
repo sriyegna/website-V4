@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -20,31 +20,13 @@ import MailIcon from "@material-ui/icons/Mail";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import Brightness6Icon from "@material-ui/icons/Brightness6";
-import themeObject from "../../themeObject";
+import { themeObject, drawerWidth } from "../../themeObject";
 
-const drawerWidth = 240;
+import MuiAppBar from "./../../Components/Drawer/AppBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  hide: {
-    display: "none",
   },
   drawer: {
     width: drawerWidth,
@@ -80,12 +62,6 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
   },
 }));
 
@@ -123,38 +99,11 @@ const MUIDrawer = () => {
     <ThemeProvider theme={themeConfig}>
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar
-          position="fixed"
-          className={clsx(classes.appBar, {
-            [classes.appBarShift]: open,
-          })}
-        >
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-              className={clsx(classes.menuButton, {
-                [classes.hide]: open,
-              })}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              Photos
-            </Typography>
-            <IconButton
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={toggleLightMode}
-              color="inherit"
-            >
-              <Brightness6Icon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
+        <MuiAppBar
+          open={open}
+          handleDrawerOpen={handleDrawerOpen}
+          toggleLightMode={toggleLightMode}
+        />
         <Drawer
           variant="permanent"
           className={clsx(classes.drawer, {

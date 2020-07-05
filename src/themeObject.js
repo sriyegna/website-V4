@@ -1,4 +1,4 @@
-const themeObject = {
+export const themeObject = {
   palette: {
     type: "dark",
     primary: {
@@ -16,4 +16,4 @@ const themeObject = {
   },
 };
 
-export default themeObject;
+export const drawerWidth = 240;
