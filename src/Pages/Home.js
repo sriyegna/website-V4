@@ -10,6 +10,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Link from "@material-ui/core/Link";
 import { links } from "../Navigation/Links";
+import { cardElevation } from "./../themeObject";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,7 +55,7 @@ const Home = () => {
   const theme = useTheme();
 
   return (
-    <Paper className={classes.root}>
+    <Paper className={classes.root} elevation={cardElevation}>
       <Typography align="center" variant="h4">
         Hi, my name is Sri
         <span
@@ -70,7 +71,7 @@ const Home = () => {
       </Typography>
       <Container className={classes.container}>
         <Box>
-          <Accordion defaultExpanded={true}>
+          <Accordion defaultExpanded={true} elevation={cardElevation}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -93,7 +94,7 @@ const Home = () => {
               </Box>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion elevation={cardElevation}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -118,7 +119,7 @@ const Home = () => {
               </Box>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion elevation={cardElevation}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -166,7 +167,7 @@ const Home = () => {
               </Box>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion elevation={cardElevation}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -194,7 +195,7 @@ const Home = () => {
               </Box>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion elevation={cardElevation}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -224,7 +225,7 @@ const Home = () => {
           </Accordion>
         </Box>
         <Box className={classes.projects}>
-          <Accordion>
+          <Accordion elevation={cardElevation}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -253,7 +254,7 @@ const Home = () => {
               </Box>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion elevation={cardElevation}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -284,7 +285,7 @@ const Home = () => {
               </Box>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion elevation={cardElevation}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"

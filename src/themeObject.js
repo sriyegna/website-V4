@@ -11,3 +11,4 @@ export const themeObject = {
 };
 
 export const drawerWidth = 220;
+export const cardElevation = 4;

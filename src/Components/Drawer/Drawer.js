@@ -100,8 +100,8 @@ const MuiDrawer = (props) => {
       </List>
       <Divider />
       <List>
-        {contactOptions.map((option) => (
-          <MuiLink href={option.route} className={classes.link}>
+        {contactOptions.map((option, index) => (
+          <MuiLink href={option.route} className={classes.link} key={index}>
             <ListItem button key={option.key}>
               <ListItemIcon>{option.icon}</ListItemIcon>
               <ListItemText
