@@ -1,10 +1,10 @@
 import React from "react";
-import MUIDrawer from "./Containers/Drawer/MUIDrawer";
+import MuiContainer from "./Containers/MuiContainer";
 
 function App() {
   return (
     <div className="App">
-      <MUIDrawer></MUIDrawer>
+      <MuiContainer></MuiContainer>
     </div>
   );
 }

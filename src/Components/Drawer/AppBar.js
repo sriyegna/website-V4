@@ -62,7 +62,7 @@ const MuiAppBar = (props) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>
-          Photos
+          Sri Natarajan
         </Typography>
         <IconButton
           aria-label="account of current user"
