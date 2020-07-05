@@ -8,6 +8,7 @@ import ContactsIcon from "@material-ui/icons/Contacts";
 import EmailIcon from "@material-ui/icons/Email";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import { links } from "./Links";
 
 export const routeOptions = [
   {
@@ -46,19 +47,19 @@ export const contactOptions = [
   {
     text: "Email",
     key: "email",
-    route: "mailto:sriyegna@gmail.com",
+    route: links.Email,
     icon: <EmailIcon />,
   },
   {
     text: "GitHub",
     key: "github",
-    route: "http://github.com/sriyegna",
+    route: links.GitHub,
     icon: <GitHubIcon />,
   },
   {
     text: "LinkedIn",
     key: "linkedin",
-    route: "http://linkedin.com/sriyegna",
+    route: links.LinkedIn,
     icon: <LinkedInIcon />,
   },
 ];
