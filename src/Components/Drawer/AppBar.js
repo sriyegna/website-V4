@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Brightness6Icon from "@material-ui/icons/Brightness6";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import { themeObject, drawerWidth } from "../../themeObject";
+import { drawerWidth } from "../../themeObject";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {

@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
@@ -10,10 +10,12 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import { Link as MuiLink } from "@material-ui/core";
 
+import { Link } from "react-router-dom";
 import { drawerWidth } from "../../themeObject";
+
+import { routeOptions, contactOptions } from "../../Navigation/DrawerOptions";
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -47,9 +49,16 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
+
+  link: {
+    color: "white",
+    textDecoration: "none",
+  },
 }));
 
 const MuiDrawer = (props) => {
+  const theme = useTheme();
+  console.log(theme);
   const classes = useStyles();
   const { open, handleDrawerClose } = props;
   return (
@@ -73,24 +82,38 @@ const MuiDrawer = (props) => {
       </div>
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {routeOptions.map((option, index) => (
+          <Link to={option.route} className={classes.link}>
+            <ListItem button key={option.key}>
+              <ListItemIcon>{option.icon}</ListItemIcon>
+              <ListItemText
+                primary={option.text}
+                style={
+                  theme.palette.type === "dark"
+                    ? { color: "#fff" }
+                    : { color: "rgba(0, 0, 0, 0.87)" }
+                }
+              />
+            </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {contactOptions.map((option, index) => (
+          <MuiLink href={option.route} className={classes.link}>
+            <ListItem button key={option.key}>
+              <ListItemIcon>{option.icon}</ListItemIcon>
+              <ListItemText
+                primary={option.text}
+                style={
+                  theme.palette.type === "dark"
+                    ? { color: "#fff" }
+                    : { color: "rgba(0, 0, 0, 0.87)" }
+                }
+              />
+            </ListItem>
+          </MuiLink>
         ))}
       </List>
     </Drawer>
