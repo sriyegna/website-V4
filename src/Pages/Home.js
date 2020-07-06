@@ -14,8 +14,8 @@ import { cardElevation } from "./../themeObject";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "20px",
-    margin: "20px",
+    padding: "1%",
+    margin: "1%",
   },
   heading: {
     textDecoration: "underline",

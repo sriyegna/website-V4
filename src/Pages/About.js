@@ -25,8 +25,8 @@ import { aboutData } from "./data/About";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "20px",
-    margin: "20px",
+    padding: "1%",
+    margin: "1%",
   },
   timelineCard: {
     color: theme.palette.type === "dark" ? "white" : "black",

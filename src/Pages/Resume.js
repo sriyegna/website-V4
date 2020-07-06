@@ -9,8 +9,8 @@ import ResumePDF from "../Assets/resume.pdf";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "20px",
-    margin: "20px",
+    padding: "1%",
+    margin: "1%",
   },
   divider: {
     marginTop: "15px",
