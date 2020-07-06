@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -46,7 +46,7 @@ const MuiDrawer = (props) => {
 
   return (
     <>
-      <Fragment>
+      <>
         <SwipeableDrawer
           anchor="left"
           open={state["left"]}
@@ -62,7 +62,7 @@ const MuiDrawer = (props) => {
             <DrawerList drawerCloseFn={toggleDrawer} swipeable={false} />
           </div>
         </SwipeableDrawer>
-      </Fragment>
+      </>
       <Drawer
         variant="persistent"
         anchor="left"
