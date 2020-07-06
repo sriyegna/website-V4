@@ -12,14 +12,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import Ninja from "../Assets/ninja.png";
-import {
-  MdSchool,
-  MdWork,
-  MdAccountCircle,
-  MdCode,
-  MdComputer,
-} from "react-icons/md";
-import { FaRegSmileWink, FaHamburger } from "react-icons/fa";
 import { cardElevation } from "./../themeObject";
 import { aboutData } from "./data/About";
 
