@@ -40,7 +40,6 @@ const useLightMode = () => {
       },
     };
     setTheme(updatedTheme);
-    console.log(updatedTheme);
   };
   return [theme, toggleLightMode];
 };

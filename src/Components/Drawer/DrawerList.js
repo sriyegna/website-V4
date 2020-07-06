@@ -8,17 +8,12 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { Link as MuiLink } from "@material-ui/core";
+
 import { Link } from "react-router-dom";
-import { drawerWidth } from "../../themeObject";
+
 import { routeOptions, contactOptions } from "../../Navigation/DrawerOptions";
 
 const useStyles = makeStyles((theme) => ({
-  drawer: {
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
   drawerHeader: {
     display: "flex",
     alignItems: "center",
@@ -27,40 +22,36 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
   },
-  toolbar: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-  },
-
   link: {
     color: "white",
     textDecoration: "none",
   },
-  list: {
-    width: 250,
-  },
 }));
 
 const DrawerList = (props) => {
-  const { closeDrawer, swipeable } = props;
+  const { drawerCloseFn, swipeable } = props;
   const theme = useTheme();
   const classes = useStyles();
+
+  const drawerClose = () => {
+    swipeable ? drawerCloseFn(false) : drawerCloseFn();
+  };
 
   return (
     <>
       <div className={classes.drawerHeader}>
-        <IconButton onClick={swipeable ? closeDrawer(false) : closeDrawer()}>
+        <IconButton onClick={drawerClose}>
           <ChevronLeftIcon />
         </IconButton>
       </div>
       <Divider />
       <List>
         {routeOptions.map((option) => (
-          <Link to={option.route} className={classes.link}>
+          <Link
+            to={option.route}
+            className={classes.link}
+            onClick={!swipeable ? drawerClose : null}
+          >
             <ListItem button key={option.key}>
               <ListItemIcon>{option.icon}</ListItemIcon>
               <ListItemText
