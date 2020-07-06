@@ -9,7 +9,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Link from "@material-ui/core/Link";
-import { links } from "../Navigation/Links";
+import links from "../Navigation/Links";
 import { cardElevation } from "./../themeObject";
 
 const useStyles = makeStyles((theme) => ({
