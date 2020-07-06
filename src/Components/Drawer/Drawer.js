@@ -23,14 +23,14 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   list: {
-    width: 250,
+    width: drawerWidth,
   },
 }));
 
 const MuiDrawer = (props) => {
   const [state, setState] = useState({ left: false });
   const classes = useStyles();
-  const { open, handleDrawerClose } = props;
+  const { open, setOpen, handleDrawerClose } = props;
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -40,7 +40,7 @@ const MuiDrawer = (props) => {
     ) {
       return;
     }
-
+    setOpen(open);
     setState({ left: open });
   };
 

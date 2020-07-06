@@ -68,7 +68,11 @@ const MuiContainer = () => {
             handleDrawerOpen={handleDrawerOpen}
             toggleLightMode={toggleLightMode}
           />
-          <MuiDrawer open={open} handleDrawerClose={handleDrawerClose} />
+          <MuiDrawer
+            open={open}
+            setOpen={setOpen}
+            handleDrawerClose={handleDrawerClose}
+          />
           <main className={classes.content}>
             <div className={classes.toolbar} />
             <Switch>
