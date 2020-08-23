@@ -4,7 +4,7 @@ const links = {
   LinkedIn: "https://www.linkedin.com/in/srinath-natarajan/",
   Phone: "tel:6478313934",
   Projects: {
-    StockTracker: "https://github.com/sriyegna/stocktracker",
+    StockTracker: "https://github.com/sriyegna/StockTrackerWebsite",
     MultiPhone: "https://github.com/sriyegna/Verifit",
     Pikaptcha: "https://github.com/sriyegna/Pikaptcha",
     EmergencyServicesLocator:
