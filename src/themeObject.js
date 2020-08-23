@@ -2,7 +2,7 @@ export const themeObject = {
   palette: {
     type: "dark",
     primary: {
-      main: "#ff4400",
+      main: "#3f51b5",
     },
     secondary: {
       main: "#0044ff",

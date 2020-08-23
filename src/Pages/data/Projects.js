@@ -74,7 +74,7 @@ const projectData = [
     githubLink: links.Projects.Pikaptcha,
   },
   {
-    name: "StockTracker",
+    name: "Emergency Services Locator",
     description: (
       <>
         'ESL' is a web application that allows users to locate nearby emergency

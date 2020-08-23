@@ -1,13 +1,14 @@
 import React from "react";
-import Bounce from "react-reveal/Bounce";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-import Ninja from "../Assets/ninja.png";
+import {
+  makeStyles,
+  Paper,
+  Typography,
+  Divider,
+  Button,
+  Grid,
+  Container,
+  Box,
+} from "@material-ui/core";
 import { cardElevation } from "./../themeObject";
 import projectData from "./data/Projects";
 
@@ -41,41 +42,53 @@ const Projects = () => {
   const classes = useStyles();
 
   return (
-    <Paper className={classes.root}>
+    <Box className={classes.root}>
       {projectData.map((data, index) => (
-        <Paper className={classes.root} elevation={cardElevation} key={index}>
-          <Typography align="center" variant="h4">
-            {data.name}
-          </Typography>
-          <Typography
-            align="center"
-            variant="body2"
-            className={classes.description}
-          >
-            {data.description}
-          </Typography>
-          {data.skills.map((skill, index) => (
+        <Box key={index} mb={2}>
+          <Paper className={classes.root} elevation={cardElevation}>
+            <Typography align="center" variant="h4">
+              {data.name}
+            </Typography>
             <Typography
               align="center"
-              variant="body1"
-              className={classes.skill}
-              key={index}
+              variant="body2"
+              className={classes.description}
             >
-              {skill}
+              {data.description}
             </Typography>
-          ))}
-          <Grid container justify="center" className={classes.grid}>
-            <img src={data.image} alt={data.name} className={classes.image} />
-          </Grid>
-          <Divider className={classes.divider} />
-          <Container className={classes.button}>
-            <Button variant="contained" color="primary" href={data.githubLink}>
-              GitHub
-            </Button>
-          </Container>
-        </Paper>
+            {data.skills.map((skill, index) => (
+              <Typography
+                align="center"
+                variant="body1"
+                className={classes.skill}
+                key={index}
+              >
+                {skill}
+              </Typography>
+            ))}
+            <Grid container justify="center" className={classes.grid}>
+              <img
+                src={data.image}
+                alt={data.name}
+                className={classes.image}
+                height="auto"
+                width="auto"
+              />
+            </Grid>
+            <Divider className={classes.divider} />
+            <Container className={classes.button}>
+              <Button
+                variant="contained"
+                color="primary"
+                href={data.githubLink}
+              >
+                GitHub
+              </Button>
+            </Container>
+          </Paper>
+        </Box>
       ))}
-    </Paper>
+    </Box>
   );
 };
 

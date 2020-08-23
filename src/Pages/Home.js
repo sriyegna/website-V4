@@ -1,14 +1,16 @@
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
+import {
+  makeStyles,
+  Paper,
+  Typography,
+  Container,
+  Box,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Link,
+} from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Link from "@material-ui/core/Link";
 import links from "../Navigation/Links";
 import { cardElevation } from "./../themeObject";
 
@@ -52,22 +54,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
     <Paper className={classes.root} elevation={cardElevation}>
       <Typography align="center" variant="h4">
-        Hi, my name is Sri
-        <span
-          className={
-            theme.palette.type === "dark"
-              ? classes.darkGreyName
-              : classes.lightGreyName
-          }
-        >
-          nath
-        </span>{" "}
-        Natarajan.
+        Hi, my name is Sri Natarajan.
       </Typography>
       <Container className={classes.container}>
         <Box>

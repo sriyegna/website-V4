@@ -3,7 +3,6 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import "../../node_modules/react-vertical-timeline-component/style.min.css";
@@ -11,7 +10,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import Ninja from "../Assets/ninja.png";
+import Me from "../Assets/me.jpg";
 import { cardElevation } from "./../themeObject";
 import { aboutData } from "./data/About";
 
@@ -36,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
   verticalTimeline: {
     marginTop: "30px",
   },
+  imageCenter: {
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: "auto",
+  },
 }));
 
 const About = () => {
@@ -57,16 +62,15 @@ const About = () => {
   return (
     <Paper className={classes.root}>
       <Card elevation={cardElevation}>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="400"
-          image={Ninja}
-          title="Contemplative Reptile"
+        <img
+          src={Me}
+          alt="Sri"
+          height="400px"
+          className={classes.imageCenter}
         />
         <CardContent>
           <Typography gutterBottom align="center" variant="h5" component="h2">
-            Hi. In case you haven't figured out, I'm Sri.
+            Hi, I'm Sri.
           </Typography>
           <Typography
             gutterBottom
@@ -77,7 +81,8 @@ const About = () => {
             I am a student in the Bachelor of Computing program at the
             University of Guelph with a genuine passion for software performance
             and security. I love to learn new languages and tinker around with
-            something new.
+            something new. Recently I have taken a liking to front end web
+            development and have been learning about ML on the side!
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             I am primarily focused on developing web applications however I also

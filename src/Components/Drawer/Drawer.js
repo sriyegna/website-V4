@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
+import { Drawer, SwipeableDrawer } from "@material-ui/core";
 import { drawerWidth } from "../../themeObject";
-
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import DrawerList from "./DrawerList";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 const MuiDrawer = (props) => {
   const [state, setState] = useState({ left: false });
   const classes = useStyles();
-  const { open, setOpen, handleDrawerClose, manualDrawerOpen } = props;
+  const { setOpen, handleDrawerClose, manualDrawerOpen } = props;
 
   const toggleDrawer = (open) => (event) => {
     if (
