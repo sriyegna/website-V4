@@ -47,15 +47,18 @@ const useLightMode = () => {
 const MuiContainer = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [manualDrawerOpen, setManualDrawerOpen] = useState(false);
   const [theme, toggleLightMode] = useLightMode();
   const themeConfig = createMuiTheme(theme);
 
   const handleDrawerOpen = () => {
     setOpen(true);
+    setManualDrawerOpen(true);
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
+    setManualDrawerOpen(false);
   };
 
   return (
@@ -71,6 +74,7 @@ const MuiContainer = () => {
           <MuiDrawer
             open={open}
             setOpen={setOpen}
+            manualDrawerOpen={manualDrawerOpen}
             handleDrawerClose={handleDrawerClose}
           />
           <main className={classes.content}>

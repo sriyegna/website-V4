@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 const MuiDrawer = (props) => {
   const [state, setState] = useState({ left: false });
   const classes = useStyles();
-  const { open, setOpen, handleDrawerClose } = props;
+  const { open, setOpen, handleDrawerClose, manualDrawerOpen } = props;
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -67,7 +67,7 @@ const MuiDrawer = (props) => {
         variant="persistent"
         anchor="left"
         className={classes.drawer}
-        open={open}
+        open={manualDrawerOpen}
         classes={{
           paper: classes.drawerPaper,
         }}
