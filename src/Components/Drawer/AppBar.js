@@ -4,6 +4,7 @@ import clsx from "clsx";
 import {
   AppBar,
   Toolbar,
+  Button,
   IconButton,
   Typography,
   makeStyles,
@@ -64,7 +65,7 @@ const MuiAppBar = (props) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>
-          Sri Natarajan
+          <Button href="/">Sri Natarajan</Button>
         </Typography>
         <IconButton
           aria-label="account of current user"

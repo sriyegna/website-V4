@@ -4,9 +4,45 @@ import MultiPhone from "../../Assets/multiphone.png";
 import Pikaptcha from "../../Assets/pikaptcha.png";
 import EmergencyServicesLocator from "../../Assets/esl.png";
 import WebsiteV2 from "../../Assets/websitev2.png";
+import TasksToday from "../../Assets/taskstoday.png";
+import WebsiteV3 from "../../Assets/websitev3.png";
 import links from "../../Navigation/Links";
 
 const projectData = [
+  {
+    name: "TasksToday",
+    description: (
+      <>
+        An application I created to keep track of my daily tasks at my job. The
+        application was intended to keep track for the next daily standup
+        meeting and if I ever needed to go back and look at when I started or
+        finished a certain task.
+      </>
+    ),
+    skills: [
+      "ReactJS",
+      "Firebase",
+      "FullCalendar.io",
+      "Material-UI",
+      "Material-UI Rich Text Editor",
+      "REST",
+    ],
+    image: TasksToday,
+    githubLink: links.Projects.TasksToday,
+  },
+  {
+    name: "Website V3",
+    description: (
+      <>
+        A personal website to showcase projects, my resume, and contact
+        information. It was very similar to this website in terms of content,
+        however some frameworks used were different.
+      </>
+    ),
+    skills: ["ReactJS", "react-mdl", "react-vertical-timeline"],
+    image: WebsiteV3,
+    githubLink: links.Projects.WebsiteV3,
+  },
   {
     name: "StockTracker",
     description: (
