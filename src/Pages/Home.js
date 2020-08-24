@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "1%",
   },
   heading: {
-    textDecoration: "bold",
+    fontWeight: "bold",
   },
   darkGreyName: {
     color: "rgb(104,104,104)",

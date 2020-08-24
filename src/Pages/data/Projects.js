@@ -72,7 +72,7 @@ const projectData = [
     name: "MultiPh.one",
     description: (
       <>
-        <span className="background-grey">
+        <span className="boldText">
           Discontinued due to server costs and costs of purchasing numbers
         </span>
         <br />

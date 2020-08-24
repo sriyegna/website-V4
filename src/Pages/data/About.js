@@ -31,11 +31,9 @@ export const aboutData = [
     p: (
       <p>
         At age 10 my dad helped me build my first computer. By buying the parts{" "}
-        <span className="background-grey">
-          (motherboard, RAM, CPU, PSU, etc)
-        </span>
-        , we assembled the computer and installed Windows! I still remember the
-        day we got high-speed internet!
+        <span className="boldText">(motherboard, RAM, CPU, PSU, etc)</span>, we
+        assembled the computer and installed Windows! I still remember the day
+        we got high-speed internet!
       </p>
     ),
   },
@@ -50,8 +48,8 @@ export const aboutData = [
         Yes that's right. My first experience with programming (Java) was when I
         made a Old School RuneScape ripoff. At the time it was just RuneScape.
         None of that pesky RS3. Achieving over{" "}
-        <span className="background-grey">20,000 unique users</span> on a spare
-        Pentium 3 desktop my dad got from work.
+        <span className="boldText">20,000 unique users</span> on a spare Pentium
+        3 desktop my dad got from work.
       </p>
     ),
   },
@@ -64,9 +62,7 @@ export const aboutData = [
     p: (
       <p>
         I began to self-learn{" "}
-        <span className="background-grey">
-          Python, HTML, CSS, and JavaScript
-        </span>
+        <span className="boldText">Python, HTML, CSS, and JavaScript</span>
         . Making various simple applications such as a name based notetaker, a
         personal website, and automating some twitter feeds. I might have done
         some tinkering with SQL injection and other exploits. Might being the
@@ -83,9 +79,7 @@ export const aboutData = [
     p: (
       <p>
         I began to self-learn{" "}
-        <span className="background-grey">
-          Python, HTML, CSS, and JavaScript
-        </span>
+        <span className="boldText">Python, HTML, CSS, and JavaScript</span>
         . Making various simple applications such as a name based notetaker, a
         personal website, and automating some twitter feeds. I might have done
         some tinkering with SQL injection and other exploits. Might being the
@@ -103,7 +97,7 @@ export const aboutData = [
       <p>
         My first real work experience with Canada's largest cell phone company.
         I got real world experience with{" "}
-        <span className="background-grey">
+        <span className="boldText">
           working in teams, and bug reporting and debugging real software
         </span>
         ! I developed small scripts to help my day to day duties be easier.
@@ -123,9 +117,7 @@ export const aboutData = [
         an offshore team and boy was that a challenge. I had to work early and
         late to speak with people in Hyderabad, India. This was a great
         experience learning{" "}
-        <span className="background-grey">
-          team management and automation testing
-        </span>
+        <span className="boldText">team management and automation testing</span>
         !
       </p>
     ),
@@ -144,7 +136,7 @@ export const aboutData = [
         available is charging people $10? You create a free one. That's what I
         did. I created Pikaptcha because I know the userbase of Pokemon Go
         players can't pay the $10, or even have a credit card. Written in{" "}
-        <span className="background-grey">
+        <span className="boldText">
           Python and using the Selenium framework and 2Captcha API
         </span>
         , I wrote a program to automatically create Pokemon Go accounts, bypass
@@ -163,7 +155,7 @@ export const aboutData = [
       <p>
         I decided to enroll in Mohawk College and get a Diploma. With the help
         of some great professors, I learned many things about{" "}
-        <span className="background-grey">
+        <span className="boldText">
           Reactive Web Development, Java, Systems Design, Software Testing,
           .NET, Object Oriented Systems, Data Structures, Database Theory,
           Server Management, and Project Management
@@ -182,11 +174,11 @@ export const aboutData = [
       <p>
         My first developer work experience where I designed a new e-banking
         website using{" "}
-        <span className="background-grey">
+        <span className="boldText">
           HTML, CSS, JavaScript, and a proprietary framework known as UXP
         </span>
         . I got to participate in the{" "}
-        <span className="background-grey">
+        <span className="boldText">
           decision making process with consulting firms, marketing firms,
           vendors, and our directors
         </span>
@@ -204,7 +196,7 @@ export const aboutData = [
       <p>
         Continuing my education from College, I decided to transfer to the
         University of Guelph. Here I learned more about{" "}
-        <span className="background-grey">
+        <span className="boldText">
           Microcomputers, Software Design and Development, Operating Systems,
           and Algorithms
         </span>
@@ -225,7 +217,7 @@ export const aboutData = [
         services. After some digging, I found a service called SignalWire that
         will rent you VoIP numbers for $0.08/month. I created an application
         using{" "}
-        <span className="background-grey">
+        <span className="boldText">
           Angular as the frontend, and .NET core (and MS Identity Core) as the
           backend
         </span>{" "}
@@ -250,7 +242,7 @@ export const aboutData = [
         Who wants to get rich? I do. That's why I created StockTracker. A simple
         application to perform calculations on historical stock data for tickers
         that the user enters. The application uses{" "}
-        <span className="background-grey">
+        <span className="boldText">
           Angular as a frontend, Python as the backend, and makes REST calls to
           Stock API's and populates a MySQL database.
         </span>
@@ -267,9 +259,8 @@ export const aboutData = [
       <p>
         That's right, back again! This time I'm here to develop enterprise grade
         web applications to help monitor cyber security threats using{" "}
-        <span className="background-grey">React</span> and their newly acquired
-        company Cylance! This will be an interesting term that I am sure to
-        enjoy!
+        <span className="boldText">React</span> and their newly acquired company
+        Cylance! This will be an interesting term that I am sure to enjoy!
       </p>
     ),
   },

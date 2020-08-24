@@ -12,8 +12,8 @@ code {
     monospace;
 }
 
-.background-grey {
-  text-decoration: bold;
+.boldText {
+  font-weight: bold;
 }
 
 .boldUnderline {
