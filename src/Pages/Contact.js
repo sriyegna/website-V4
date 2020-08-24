@@ -110,7 +110,7 @@ const Resume = () => {
                   align="center"
                   href={links.Phone}
                 >
-                  Call Me - (647) 832-3934
+                  Call Me - (647) 831-3934
                 </Button>
               </Box>
             </Card>
